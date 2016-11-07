@@ -11,7 +11,7 @@
 # 1) Print the new text
 print("START*******")
 
-#PART 1
+#PART A
 
 import nltk
 import random
@@ -20,3 +20,5 @@ from nltk.corpus import gutenberg
 from nltk import word_tokenize, sent_tokenize
 
 tagged_tokens = nltk.pos_tag(text2)
+
+
