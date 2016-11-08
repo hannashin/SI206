@@ -25,9 +25,22 @@ x.write(soup1.prettify())
 x.close()
 
 #replacing every word student with AMAZING student
+
+for words in soup1.find_all(class_="menu"):
+	if words.a:
+		print (words.text.replace("student", "AMAZING student"))
+
 for words in soup1.find_all(class_="field-item even"):
-	if words.p:
-		words.text.replace('student', 'AMAZING student')
+	if words.p: #each paragraph
+		print (words.text.replace('student', 'AMAZING student'))
+
+
+#pictures
+
+for pics in soup1.find_all(class='field-item even'):
+	if pics.get('src'):
+		pics.get('src').replace('https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg', 'media/me.png')
+
 
 
 #replacing main picture with a picture of myself
