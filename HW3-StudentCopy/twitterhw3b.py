@@ -27,7 +27,7 @@ search_results = api.search(q='Twizzlers') #Twizzlers
 comp = [tweet.text for tweet in search_results]
 type(comp)
 
-print (comp) #prints a huge list of results
+print (comp) #prints each tweet
 
 #Using textblob documentaries
 
