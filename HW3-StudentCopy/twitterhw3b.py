@@ -7,11 +7,10 @@
 
 # Be prepared to change the search term during demo.
 
-
+import json
+import requests
 from textblob import TextBlob
 import tweepy
-
-
 
 # Unique code from Twitter
 access_token = "791353725814247424-47MAYDihAZkKKwTWEXN7t7tP3QSiUfQ"
@@ -23,12 +22,24 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-search_results = api.search(q='Jubilee') 
-
+search_results = api.search(q='Twizzlers') #Twizzlers
+#length of the comp
 comp = [tweet.text for tweet in search_results]
+type(comp)
 
-print (comp)
+print (comp) #prints a huge list of results
+
+#Using textblob documentaries
+
+subjectivity_count = 0 #returns a float
+polarity_count = 0 #returns a float
+for words in comp:
+	a = TextBlob(words)
+	subjectivity_count += a.subjectivity #documentations
+	polarity_count += a.polarity #documentations
 
 
-print("Average subjectivity is")
-print("Average polarity is")
+print("Average subjectivity is " + str(subjectivity_count/len(comp))) #divide by average str
+print("Average polarity is " + str(polarity_count/len(comp))) #divide by average
+
+#YOUNG SAVAGE!!!!!!!!!!!!!!!!!!

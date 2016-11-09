@@ -19,27 +19,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
-api.update_with_media(filename = "koons.jpg", status='#UMSI-206 #Proj3')
-
-
-
-#Test 1
-#run1 = twtr.tweet("Prints out an image!")
-#print (run1) #should return None, but tweets run1 (Prints None on terminal)
-
-# # Boilerplate code here
-# auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
-# auth.set_access_token(access_token,access_token_secret)
-
-# api = tweepy.API(auth)
-# #Now we can Create Tweets, Delete Tweets, and Find Twitter Users
-
-# public_tweets = api.search('UMSI')
-
-
-# for tweet in public_tweets:
-# 	print(tweet.text)
-
+api.update_with_media(filename = "koons.jpg", status='#UMSI206 #Proj3')
 
 # print("""No output necessary although you 
 # 	can print out a success/failure message if you want to.""")

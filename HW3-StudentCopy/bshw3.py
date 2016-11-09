@@ -13,6 +13,7 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
+
 link = 'http://collemc.people.si.umich.edu/data/bshw3StarterFile.html'
 html_link = urlopen(link).read() #opening the link
 
@@ -37,11 +38,12 @@ for words in soup1.find_all(class_="field-item even"):
 
 #pictures
 
-for pics in soup1.find_all(class='field-item even'):
-	if pics.get('src'):
-		pics.get('src').replace('https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg', 'media/me.png')
+# for pics in soup1.find_all(class='field-item even'):
+# 	if pics.get('src'):
+# 		pics.get('src').replace('https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg', 'media/me.png')
 
-
+#f = open('bshw3.html', 'w')
+#f.close()
 
 #replacing main picture with a picture of myself
 #need to put image in seperate folder (how?)

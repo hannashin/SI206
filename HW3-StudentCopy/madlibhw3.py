@@ -11,14 +11,22 @@
 # 1) Print the new text
 print("START*******")
 
-#PART A
-
 import nltk
 import random
 from nltk.book import *
 from nltk.corpus import gutenberg
 from nltk import word_tokenize, sent_tokenize
 
-tagged_tokens = nltk.pos_tag(text2)
+print('Original text (150 tokens)')
+requir_1 = text2[:150]
+
+#print (requir_1) #pritns 150 characters/tokens
+
+def spaced(speech):
+	if speech in [',','.','!',':','?']:
+		return speech
+	else:
+		return " " + speech
+
 
 
