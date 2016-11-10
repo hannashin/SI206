@@ -12,6 +12,7 @@
 
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+import requests 
 
 
 link = 'http://collemc.people.si.umich.edu/data/bshw3StarterFile.html'
@@ -20,30 +21,33 @@ html_link = urlopen(link).read() #opening the link
 soup1 = BeautifulSoup(html_link, 'html.parser')
 
 #html life
-file_link = "bshw3.html"
-x = open(file_link, 'w')
-x.write(soup1.prettify())
-x.close()
+file1 = str(soup1)
+
 
 #replacing every word student with AMAZING student
 
-for words in soup1.find_all(class_="menu"):
-	if words.a:
-		print (words.text.replace("student", "AMAZING student"))
+# for words in soup1.find_all(class_="menu"):
+# 	if words.a:
+# 		print (words.text.replace("student", "AMAZING student"))
 
-for words in soup1.find_all(class_="field-item even"):
-	if words.p: #each paragraph
-		print (words.text.replace('student', 'AMAZING student'))
+# for words in soup1.find_all(class_="field-item even"):
+# 	if words.p: #each paragraph
+# 		print (words.text.replace('student', 'AMAZING student'))
 
 
-#pictures
+stringfile1= file1.replace('student', 'AMAZING student') #step 1
+stringfile2 = stringfile1.replace('logo2.png', 'media/logo.png') #step 3
+stringfile3 = stringfile2.replace('https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg', 'media/me.png') #image of myself in media folder
+
+
+#lol si 106
+direct_file = "bshw3.html"
+d = open(direct_file, 'w')
+d.write(stringfile3)
+d.close()
+
+
 
 # for pics in soup1.find_all(class='field-item even'):
 # 	if pics.get('src'):
 # 		pics.get('src').replace('https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg', 'media/me.png')
-
-#f = open('bshw3.html', 'w')
-#f.close()
-
-#replacing main picture with a picture of myself
-#need to put image in seperate folder (how?)
