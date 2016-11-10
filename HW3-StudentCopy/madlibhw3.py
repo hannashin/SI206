@@ -41,7 +41,8 @@ substitution_probabilities = {"NN":.15,"NNS":.15,"VB":.1,"JJ":.1}
 
 final_words = []
 
-for (word, tag) in tagged_tokens[:150]:
+#madlib_generator from .py file
+for (word, tag) in tagged_tokens[:150]: #up to 150 or list goes on and on 
 	if tag not in substitution_probabilities or random.random() > substitution_probabilities[tag]:
 		final_words.append(spaced(word))
 	else:

@@ -5,6 +5,8 @@
 # 2) Print the average subjectivity of the results
 # 3) Print the average polarity of the results
 
+#Twitter Handle : https://twitter.com/206_hanna
+
 # Be prepared to change the search term during demo.
 
 import json
@@ -39,6 +41,7 @@ for words in comp:
 	polarity_count += a.polarity #documentations
 
 
+#should be between 0 and 1
 print("Average subjectivity is " + str(subjectivity_count/len(comp))) #divide by average str
 print("Average polarity is " + str(polarity_count/len(comp))) #divide by average
 
