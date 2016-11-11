@@ -42,7 +42,9 @@ for words in comp:
 
 
 #should be between 0 and 1
-print("Average subjectivity is " + str(subjectivity_count/len(comp))) #divide by average str
-print("Average polarity is " + str(polarity_count/len(comp))) #divide by average
+avg_subj = len(comp)
+avg_pol = len(comp)
+print("Average subjectivity is " + str(subjectivity_count/avg_subj)) #divide by average str
+print("Average polarity is " + str(polarity_count/avg_pol)) #divide by average
 
 #YOUNG SAVAGE!!!!!!!!!!!!!!!!!!
